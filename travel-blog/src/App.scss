@@ -31,6 +31,7 @@ $medium-breakpoint: 960px;
       display: flex;
       justify-content: space-between;
   }
+
   h2, p {
     margin: 0;
   }
@@ -41,10 +42,10 @@ $medium-breakpoint: 960px;
     span {
       margin-left: $gutter;
     }
+    
     span:hover {
       text-decoration: underline;
       cursor: pointer;
-      transition: 0.5s;
     }
   }
 }
@@ -102,6 +103,7 @@ $medium-breakpoint: 960px;
     .headshot-container {
       grid-column-start: 2;
       grid-column-end: 3;
+
       .headshot {
         max-width: 100%;
         border-radius: 100%;
