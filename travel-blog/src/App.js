@@ -1,13 +1,14 @@
-import { Body, Header } from './components'
+import { Body, Footer, Header } from './components'
 import headshot from './images/headshot.jpg';
 import heroBackground from './images/hero-background.jpg';
 import { strings } from './strings'
 import './App.scss';
 
 const App = () => {
-
   const { home, blog, about } = strings.buttons
-  const buttons = [
+  const { privacyPolicy, termsAndConditions } = strings.links
+  
+  const headerButtons = [
     {
       label: home,
     },
@@ -20,10 +21,25 @@ const App = () => {
     }
   ]
 
+  const footerLinks = [
+    {
+      label: privacyPolicy,
+      href: '#privacy'
+    },
+    {
+      label: termsAndConditions,
+      href: '#terms'
+    }
+  ]
+
+  const { content, footer } = strings.text
+
   return (
     <div className="app">
-      <Header title='Travelize' subheading='My traveling experiences' buttons={buttons} />
-      <Body heroBackground={heroBackground} headshot={headshot} heading='A little about me'/>
+      <Header title='Travelize' subheading='My traveling experiences' buttons={headerButtons} />
+      <Body heroBackground={heroBackground} headshot={headshot} heading='A little about me' content={content}>
+        <Footer text={footer} links={footerLinks}/>
+      </Body>
     </div>
   );
 }
