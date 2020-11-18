@@ -16,5 +16,102 @@ $medium-breakpoint: 960px;
   * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
+    color: $gray;
   }
 }
+
+.header-footer {
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  padding: 0.5em 0;
+  width: 100%;
+  .content {
+      grid-column-start: 2;
+      grid-column-end: 2;
+      display: flex;
+      justify-content: space-between;
+  }
+  h2, p {
+    margin: 0;
+  }
+
+  .footer-links {
+    display: flex;
+
+    span {
+      margin-left: $gutter;
+    }
+    span:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+  }
+}
+
+.header-footer--light {
+  background-color: $primary-light;
+}
+
+.header-footer--dark {
+  background-color: $primary;
+  span {
+    color: $primary-light;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 0;
+  margin-left: $gutter;
+  cursor: pointer;
+}
+
+.button--state-active, .button:hover {
+  background-color: $primary;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .hero {
+    width: $hero-width;
+  }
+
+  .body-content {
+    display: grid;
+    grid-template-columns: auto $profile-image-width 50% auto;
+    column-gap: 1em;
+    margin: 3em 0;
+
+    .headshot-container {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      .headshot {
+        max-width: 100%;
+        border-radius: 100%;
+      }
+    }
+
+    .text {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+  }
+}
+
