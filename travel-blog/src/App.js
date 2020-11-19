@@ -1,13 +1,15 @@
-import { Body, Footer, Header } from './components'
+import { Body, Footer, Header } from './components';
 import headshot from './images/headshot.jpg';
 import heroBackground from './images/hero-background.jpg';
-import { strings } from './strings'
+import { strings } from './strings';
 import './App.scss';
 
 const App = () => {
-  const { home, blog, about } = strings.buttons
-  const { privacyPolicy, termsAndConditions } = strings.links
-  
+  const { home, blog, about } = strings.buttons;
+  const { privacyPolicy, termsAndConditions } = strings.links;
+  const { title, subHeader, aboutHeader } = strings.headers
+  const { content, footer } = strings.text;
+
   const headerButtons = [
     {
       label: home,
@@ -17,31 +19,38 @@ const App = () => {
     },
     {
       label: about,
-      active: true
-    }
-  ]
+      active: true,
+    },
+  ];
 
   const footerLinks = [
     {
       label: privacyPolicy,
-      href: '#privacy'
+      href: '#privacy',
     },
     {
       label: termsAndConditions,
-      href: '#terms'
-    }
-  ]
-
-  const { content, footer } = strings.text
+      href: '#terms',
+    },
+  ];
 
   return (
     <div className="app">
-      <Header title='Travelize' subheading='My traveling experiences' buttons={headerButtons} />
-      <Body heroBackground={heroBackground} headshot={headshot} heading='A little about me' content={content}>
-        <Footer text={footer} links={footerLinks}/>
+      <Header
+        title={title}
+        subheading={subHeader}
+        buttons={headerButtons}
+      />
+      <Body
+        heroBackground={heroBackground}
+        headshot={headshot}
+        heading={aboutHeader}
+        content={content}
+      >
+        <Footer text={footer} links={footerLinks} />
       </Body>
     </div>
   );
-}
+};
 
 export default App;
